@@ -88,6 +88,9 @@ Therefore, the number of detection is:
     N=0.93\dot{n}_0D_H^3\left<f(\rho)\right>,
 \end{equation}
 where the average $<...>$ is the calculated in the sample draw with the probability distribution $p(z,\mathcal{M})$. 
+In order to evaluate $f(\rho)$, we want to calculate $\rho_0$, and then we scale the $\rho$ corresponding to other $\mathcal{M}$ and $D_{\rm{eff}}$ to $\rho_0$ with equation (\ref{rho})\footnote{Equation (2) cannot be used to scale $\mathcal{M}$ in a large range. It's because the masses will not also influence the normalization of the template but also the shape. Therefore $\rho_0$ is actually the function of $\mathcal{M}$ as well. Here as we're considering the double neutron star merger, the range of the chirp mass ought to be narrow. Therefore we use that method for simplification}. 
+
+$\rho_0$ is calculated with $\Mathcal{M}=1.31\,M_\odot$ (corresponds to neutron star with mass $1.5\,M_\odot$), $D_{\rm{eff}}=1$\,Mpc.\footnote{The method of calculation: check the document ``Logic of GWtoolkit.pdf" and jupyter notebook ``SNR\_neutron.ipynb"} Since we are now calculating the maximum SNR we can get, we're supposing that the template are exactly matching with the source waveform. In this case we don't need a very accurate template for our purpose. 
 %We draw samples in parameter space following the distribution:
 %\begin{equation}
 %    p(z,\mathcal{M},\theta,\varphi,i,\psi)\propto\dot{n}(z,\mathcal{M})f(\rho),
