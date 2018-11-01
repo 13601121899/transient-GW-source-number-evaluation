@@ -24,7 +24,7 @@ where $\rho_0$ is the optimized SNR with the matched-filter:
 \begin{equation}
     \rho_0=2\sqrt{\int^\infty_0dt\frac{|h_0(f)|^2}{S_{\rm{n}(f)}}},
 \end{equation}
-where $h_0(f)$ is the GW template in Fourier domain of chirp mass $\mathcal{M}_0$ and at luminocity distance $D_L=D_0$ and optimized $i$, polarization and sky location. 
+where $h_0(f)$ is the GW template in Fourier domain of chirp mass $\mathcal{M}_0$ and at luminocity distance $D_{\rm{eff}}=D_0$ and optimized $i$, polarization and sky location. \footnote{Effective distance equals to luminous distance divided by the geometric terms.}
 
 $F_{+,\times}$ is the antenna pattern functions, which are functions of source coordinates ($\theta(t)$,$\varphi(t)$) (relative to the detector, therefore is time-varing) and polarization of GW $\psi$. These terms depend on the configure of the GW detectors. 
 
@@ -66,7 +66,7 @@ The above integration can be calculated with MCMC method. We draw sample points 
 \end{equation}
 using Markov Chain algorithm and we calculate the average of $f(\rho)$ over the sampled points. 
 \section{An example calculation}
-Considering the case of double neutron stars merger. We assume the merger rate distribution function to be:
+Considering the case of double neutron stars merger observing via the Einstein telescope. We assume the merger rate distribution function to be:
 \begin{equation}
     \dot{n}=\dot{n}_0G(\mathcal{M},\mu,\sigma),
 \end{equation}
@@ -90,7 +90,7 @@ Therefore, the number of detection is:
 where the average $<...>$ is the calculated in the sample draw with the probability distribution $p(z,\mathcal{M})$. 
 In order to evaluate $f(\rho)$, we want to calculate $\rho_0$, and then we scale the $\rho$ corresponding to other $\mathcal{M}$ and $D_{\rm{eff}}$ to $\rho_0$ with equation (\ref{rho})\footnote{Equation (2) cannot be used to scale $\mathcal{M}$ in a large range. It's because the masses will not also influence the normalization of the template but also the shape. Therefore $\rho_0$ is actually the function of $\mathcal{M}$ as well. Here as we're considering the double neutron star merger, the range of the chirp mass ought to be narrow. Therefore we use that method for simplification}. 
 
-$\rho_0$ is calculated with $\Mathcal{M}=1.31\,M_\odot$ (corresponds to neutron star with mass $1.5\,M_\odot$), $D_{\rm{eff}}=1$\,Mpc.\footnote{The method of calculation: check the document ``Logic of GWtoolkit.pdf" and jupyter notebook ``SNR\_neutron.ipynb"} Since we are now calculating the maximum SNR we can get, we're supposing that the template are exactly matching with the source waveform. In this case we don't need a very accurate template for our purpose. 
+$\rho_0$ is calculated with $\Mathcal{M}=1.31\,M_\odot$ (corresponds to neutron star with mass $1.5\,M_\odot$), $D_0=1$\,Mpc, with optimal sky position , inclination and polarization angle. \textcolor{red}{$\rho_0=5.5\times10^7$.} \footnote{The method of calculation: check the document ``Logic of GWtoolkit.pdf" and jupyter notebook ``SNR$\_$neutron.ipynb"} Since we are now calculating the maximum SNR we can get, we're supposing that the template are exactly matching with the source waveform. In this case we don't need a very accurate template for our purpose. 
 %We draw samples in parameter space following the distribution:
 %\begin{equation}
 %    p(z,\mathcal{M},\theta,\varphi,i,\psi)\propto\dot{n}(z,\mathcal{M})f(\rho),
