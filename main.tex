@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[fleqn,usenatbib]{mnras}
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 \usepackage{amsmath}
@@ -85,12 +85,14 @@ The above integration can not be done analytically, therefore we do it numerical
 \end{equation}
 Therefore, the number of detection is:
 \begin{equation}
-    N=0.93\dot{n}_0D_H^3\left<f(\rho)\right>,
+    N=0.93\dot{n}_0D_H^3\left<f(\rho)\right>T,
+    \label{eqn:number}
 \end{equation}
 where the average $<...>$ is the calculated in the sample draw with the probability distribution $p(z,\mathcal{M})$. 
 In order to evaluate $f(\rho)$, we want to calculate $\rho_0$, and then we scale the $\rho$ corresponding to other $\mathcal{M}$ and $D_{\rm{eff}}$ to $\rho_0$ with equation (\ref{rho})\footnote{Equation (2) cannot be used to scale $\mathcal{M}$ in a large range. It's because the masses will not also influence the normalization of the template but also the shape. Therefore $\rho_0$ is actually the function of $\mathcal{M}$ as well. Here as we're considering the double neutron star merger, the range of the chirp mass ought to be narrow. Therefore we use that method for simplification}. 
 
-$\rho_0$ is calculated with $\Mathcal{M}=1.31\,M_\odot$ (corresponds to neutron star with mass $1.5\,M_\odot$), $D_0=1$\,Mpc, with optimal sky position , inclination and polarization angle. \textcolor{red}{$\rho_0=5.5\times10^7$.} \footnote{The method of calculation: check the document ``Logic of GWtoolkit.pdf" and jupyter notebook ``SNR$\_$neutron.ipynb"} Since we are now calculating the maximum SNR we can get, we're supposing that the template are exactly matching with the source waveform. In this case we don't need a very accurate template for our purpose. 
+$\rho_0$ is calculated with $\mathcal{M}=1.31\,M_\odot$ (corresponds to neutron star with mass $1.5\,M_\odot$), $D_0=1$\,Mpc, with optimal sky position , inclination and polarization angle. \textcolor{red}{$\rho_0=5.5\times10^7$.} \footnote{The method of calculation: check the document ``Logic of GWtoolkit.pdf" and jupyter notebook ``SNR$\_$neutron.ipynb"} Since we are now calculating the maximum SNR we can get, we're supposing that the template are exactly matching with the source waveform. In this case we don't need a very accurate template for our purpose. As an example, we calculated $<f(\rho)>$ at $\rho^\star=10^5$. It gives: \textcolor{red}{$<f(\rho)>=0.92$}\footnote{Which means the ET can see 92\% of the whole universe of neutron stars merger events}. We use $n_0=1.3\times10^{-4}\,\text{Mpc}^3\text{yr}^{-1}$ \citep{2012ApJ...760...12A}. Therefore, put them together with equation (\ref{eqn:number}), we have \textcolor{red}{$N/T=8.8\times10^6/\text{yr}$}. 
+
 %We draw samples in parameter space following the distribution:
 %\begin{equation}
 %    p(z,\mathcal{M},\theta,\varphi,i,\psi)\propto\dot{n}(z,\mathcal{M})f(\rho),
@@ -100,4 +102,7 @@ $\rho_0$ is calculated with $\Mathcal{M}=1.31\,M_\odot$ (corresponds to neutron 
 %    \frac{(1+z)D^2_A}{E}
 %\end{equation}
 %among the sampled points. 
+\begin{thebibliography}{99}
+\bibitem[Abadie et al.(2012)]{2012ApJ...760...12A} Abadie, J., Abbott, B.~P., Abbott, R., et al.\ 2012, \apj, 760, 12
+\end{thebibliography}
 \end{document}
